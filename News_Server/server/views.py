@@ -8,9 +8,9 @@ from server.sql import gl
 from server.sql.sql_opcter import SqlOpcter
 
 
-def getNewsList(request,num):   #必须默认带request参数,否者无法访问\
+def getNewsList(request,start):   #必须默认带request参数,否者无法访问\
 	# _num=request.GET.get('num')
-	newsList=gl.sql_con.get_news_list(num)
+	newsList=gl.sql_con.get_news_list(start,20)
 	return HttpResponse(newsList)
 def getNewsDetail(request,nid):
 	print(nid)

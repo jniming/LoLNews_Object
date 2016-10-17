@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 
 import pymysql
+import time
 
 
 class SqlOperator(object):
@@ -11,8 +12,8 @@ class SqlOperator(object):
 	def connect(self):
 		print("数据库连接")
 		try:
-			self.db = pymysql.connect(user='allen_test', passwd='123456',
-			                          host='180.76.175.209', db='spinder_test',
+			self.db = pymysql.connect(user='root', passwd='root',
+			                          host='127.0.0.1', db='test',
 			                          charset='utf8')  # 链接数据库
 			dbc = self.db.cursor()
 			self.db.ping(True)
@@ -32,7 +33,7 @@ class SqlOperator(object):
 			sql = """create table if not exists %s(
             mNewsId int auto_increment,
             mNewsTitle varchar(255),
-            mNewsTime varchar(255),
+            mNewsTime TIMESTAMP ,
             mNewsImgUri varchar(255),
             primary key (mNewsId))""" % (table)
 			print(sql)
@@ -44,8 +45,7 @@ class SqlOperator(object):
 		_cur = self.db.cursor()
 		_str = pymysql.escape_string(item['title'])  # 格式化改字符串,
 		_url = pymysql.escape_string(item['url'])  # 格式化改字符串,
-		_time = pymysql.escape_string(item['time'])  # 格式化改字符串,
-		sql = "insert into %s(mNewsTitle,mNewsImgUri,mNewsTime) values ('%s','%s','%s')" % (table, _str, _url, _time)
+		sql = "insert into %s(mNewsTitle,mNewsImgUri,mNewsTime) values ('%s','%s','%s')" % (table, _str, _url,str(item['time']) )
 		print(sql)
 		_cur.execute(sql)
 		self.db.commit()
@@ -69,3 +69,5 @@ class SqlOperator(object):
 		_is_ex_news = cur.fetchone()  # 判断数据是否存在
 		cur.close()
 		return _is_ex_news is not None
+
+

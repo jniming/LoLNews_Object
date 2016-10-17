@@ -4,10 +4,14 @@ from hmac import new
 
 import bs4
 import pymysql
+import time
+
 from server.sql import gl
 
 
 class SpiderHtml(object):
+
+
 
 	def __init__(self):
 		self.fname_prefix = "fn"
@@ -31,7 +35,6 @@ class SpiderHtml(object):
 		dete_h3=None
 		if len(h3_str) is not 0:
 			dete_h3 = h3_str[len(h3_str)-1]
-
 		div_body=msg_info.findAll('div')
 		msg_time = "<h5 style='text-align: center;font-size: 12px'>发布时间:" + news["mNewsTime"] + "</h5>"
 		title="<h2 style='text-align: center;'>"+news["mNewsTitle"]+msg_time+"</h2><hr style='height:1px;border:none;border-top:1px solid #888'></hr>"
@@ -45,6 +48,7 @@ class SpiderHtml(object):
 			h3_index=retain_html.index(str(dete_h3))
 			print(h3_index)
 			retain_html=retain_html[:h3_index]
+
 
 		return str(retain_html)     #返回字符串,注意要用str()格式化html代码
 
