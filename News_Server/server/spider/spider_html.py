@@ -24,7 +24,7 @@ class SpiderHtml(object):
 		content=reqsp.read()
 		return content.decode("utf-8")
 	def get_news_body(self,nid):
-		news = gl.sql_con.query_news_info(nid)
+		news = gl.sql_con.query_news_info(nid,type)
 		_body=self._load_news_detail_html(news["mNewsImgUri"])
 		if _body is None:
 			return None
