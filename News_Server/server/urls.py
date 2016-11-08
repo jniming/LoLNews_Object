@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^getNewsDetail/(\w+)/([0-9]+)/$', views.getNewsDetail, name='getNewsDetail'),
 	url(r'^getNewsList/([0-9]+)/([0-9]+)/$', views.getNewsList,name='getNewsList'),
+	url(r'^getMeetNewsList/([0-9]+)/([0-9]+)/$', views.getMeetNewsList,name='getMeetNewsList'),
 	url(r'^getManUrlList/', views.getManUrlList,name='getManUrlList'),
 
 ]

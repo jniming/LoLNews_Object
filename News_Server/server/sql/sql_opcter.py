@@ -3,6 +3,8 @@ import json
 import pymysql
 import time
 
+from server.sql import table_name
+
 
 class SqlOpcter(object):
 	def __init__(self):
@@ -20,6 +22,8 @@ class SqlOpcter(object):
 		adb.execute('SET CHARACTER SET utf8;')
 		adb.execute('SET character_set_connection=utf8;')
 		adb.close()
+
+
 	def get_news_list(self,type,start,end):
 		table=self._get_news_type_table(type)
 		print(table)
@@ -36,14 +40,43 @@ class SqlOpcter(object):
 		print(json_list)
 		cur_.close()
 		return json_list
+
+	def get_meet_news_list(self,type,start,end):
+		table=self._get_meet_news_type_table(type)
+		print(table)
+		cur_ = self.db.cursor()
+		sql = "select * from %s order BY  mNewsTime DESC limit  %s,%s " % (table,start,end)
+		cur_.execute(sql)
+		_list = cur_.fetchall()
+		print(_list)
+		_news_ = []
+		for n in _list:
+			_stu = self.get_news_dir(n)
+			_news_.append(_stu)
+		json_list = json.dumps(_news_)  # 键值对转为json
+		print(json_list)
+		cur_.close()
+		return json_list
+	def _get_meet_news_type_table(self,type):
+		ty=int(type)
+		if ty==0:   #综合攻略
+			return table_name.meet_table[0]
+		if ty==1:  #版本攻略
+			return table_name.meet_table[1]
+
+		return None
 	def _get_news_type_table(self,type):
 		ty=int(type)
 		if ty==0:   #电竞新闻
-			return '_news'
+			return table_name.news_table[0]
 		if ty==1:  #娱乐八卦
-			return '_news'
+			return table_name.news_table[2]
 		if ty==2:  #版本动态
-			return '_update'
+			return table_name.news_table[1]
+		if ty==3:  #综合攻略2
+			return table_name.meet_table[0]
+		if ty==4:  #版本动态
+			return table_name.meet_table[1]
 		return None
 
 
@@ -67,7 +100,7 @@ class SqlOpcter(object):
 		return news_dir
 	def get_Man_Data(self):  # 获取周免数据
 		cur_ = self.db.cursor()
-		sql = "select * from _man_img_url"
+		sql = "select * from %s" %(table_name.main_table[0])
 		print(sql)
 		cur_.execute(sql)
 		mans = cur_.fetchall()
@@ -82,7 +115,7 @@ class SqlOpcter(object):
 		return _man
 	def getInnerList(self):   #获取广告轮播数据
 		cur_ = self.db.cursor()
-		sql = "select * from _innerimg"
+		sql = "select * from  %s" %(table_name.main_table[1])
 		cur_.execute(sql)
 		mans = cur_.fetchall()
 		_man = []
@@ -95,9 +128,9 @@ class SqlOpcter(object):
 		cur_.close()
 		return _man
 
-	def getSysNewsList(self):   #获取广告轮播数据
+	def getSysNewsList(self):   #获取系统公告数据
 		cur_ = self.db.cursor()
-		sql = "select * from _sysnews order BY  mSysTime DESC limit 10"
+		sql = "select * from %s order BY  mSysTime DESC limit 10" %(table_name.main_table[2])
 		cur_.execute(sql)
 		mans = cur_.fetchall()
 		_man = []

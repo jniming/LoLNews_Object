@@ -6,10 +6,12 @@ import bs4
 
 import _gl
 from util import grap_uri
+from util import table_name
 
 
 class NewsSpider(object):
 	def _init_(self):
+
 		pass
 
 	def _load_html(self, uri):
@@ -28,44 +30,59 @@ class NewsSpider(object):
 		while content is None:
 			return None
 		soup = bs4.BeautifulSoup(content, "html.parser")
-		ul = soup.find('ul', class_='comm-list art-list-txt js-list1')
-		_news_a = ul.findAll('div', class_='tit')
-		item = dict()  # dict() 类似于java中的list
-		for a in _news_a:
-			h_time = a.find('span', class_='time');
-			if h_time is not None:
-				news_time = h_time.string
-				item['time'] = self.getTime(news_time)
-			title_h = a.find('a', class_='c-black')
-			if title_h is not None:
-				news_uri = title_h['href']
-				news_title = title_h.string  # .string 获取标签内的内容
-				item['url'] = news_uri
-				item['title'] = news_title
-			# 下面进行数据实体化
-			if _gl.sql_oper.is_news_exist(news_type, item['url']) is False:
-				print("数据不存在")
-				_gl.sql_oper.insert_news_in_table(news_type, item)
-			else:
-				print("数据存在")
-				_continue = False
-				break
+		try:
+			ul = soup.find('ul', class_='comm-list art-list-txt js-list1')
+			_news_a = ul.findAll('div', class_='tit')
+			item = dict()  # dict() 类似于java中的list
+			for a in _news_a:
+				h_time = a.find('span', class_='time');
+				if h_time is not None:
+					news_time = h_time.string
+					item['time'] = self.getTime(news_time)
+				title_h = a.find('a', class_='c-black')
+				if title_h is not None:
+					news_uri = title_h['href']
+					news_title = title_h.string  # .string 获取标签内的内容
+					uri_inde=str(news_uri).find('lol.17173.com')
+					print("地址格式是否符合-->"+str(uri_inde))
+					if uri_inde is -1:
+						return None
+
+					item['url'] = news_uri
+					item['title'] = news_title
+				# 下面进行数据实体化
+				if _gl.sql_oper.is_news_exist(news_type, item['url']) is False:
+					print("数据不存在")
+					_gl.sql_oper.insert_news_in_table(news_type, item)
+				else:
+					print("数据存在")
+					_continue = False
+					break
+		except:
+			return None
 
 		return _continue
 
 	def grap_news(self, news_type):
-		def get_uri(news_type):  # 获取爬取得网站
+		def get_uri(news_type):  # 获取爬取得网站   ['_now_news', '_system_news', '_yule_news']
 			url = None
-			if news_type == '_news':
+			if news_type == table_name.news_table[0]:
 				url = grap_uri.news_uri
-			if news_type == '_sysupdate':
+			if news_type == table_name.news_table[1]:
 				url = grap_uri.sysupdate_uri
+			if news_type == table_name.news_table[2]:
+				url = grap_uri.recreation_uri
+			if news_type == table_name.meet_table[0]:
+				url = grap_uri.inter_meet_url
+			if news_type == table_name.meet_table[1]:
+				url = grap_uri.system_meet_url
 			return url
 
 		news_url = get_uri(news_type);
 		while True:
-			should_counin = self.parse_data(news_url, news_type)
 			print('本页--' + news_url)
+			should_counin = self.parse_data(news_url, news_type)
+
 			news_url = self._get_next_page_url(news_url)
 			print('下一页--' + news_url)
 			if should_counin is None:
@@ -74,29 +91,7 @@ class NewsSpider(object):
 				if should_counin is False or news_url is None:
 					continue
 
-	# def get_next_page_uri(self, url):
-	# 	_index = url.find('zixun')
-	# 	print(_index)
-	# 	_pos_str = url[_index:]
-	# 	_auto_str = url[:_index]
-	# 	print(_pos_str)
-	# 	pos = _pos_str.rindex('.')
-	# 	print(pos)
-	# 	if pos is 5:
-	# 		_st = _pos_str[:pos]
-	# 		st_ = _pos_str[pos:]
-	# 		replce_uri = _auto_str + _st + '_1' + st_
-	# 		return replce_uri
-	# 	else:
-	# 		_st = _pos_str[:pos]
-	# 		print(_st)
-	# 		st_ = _pos_str[pos:]
-	# 		_st_t = _st.rindex('_')
-	# 		_page_ix = int(_st[_st_t + 1:])
-	# 		_st_rep = _st.replace(str(_page_ix), str(_page_ix + 1))
-	# 		replce_uri = _auto_str + _st_rep + st_
-	# 		return replce_uri
-	# 	return None
+
 	def _get_next_page_url(self,url):
 		#http://lol.17173.com/banben/list/index_1.shtml
 		fromt_url=str(url)
@@ -158,7 +153,7 @@ class NewsSpider(object):
 		for man in li:
 			img_html = man.find('img')
 			man_url_html = img_html['src']
-			print(man_url_html)
+
 			_gl.sql_oper.insert_man_img(str(man_url_html))
 
 	def getInnerHtml(self):  # 获取广告资源
