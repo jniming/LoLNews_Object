@@ -13,6 +13,13 @@ def getNewsList(request,start,type):   #必须默认带request参数,否者无�
 	print(type)
 	newsList=gl.sql_con.get_news_list(type,start,20)
 	return HttpResponse(newsList)
+
+def getVideoList(request,start,type):   #必须默认带request参数,否者无法访问\
+	# _num=request.GET.get('num')
+	print(type)
+	newsList=gl.sql_con.get_news_list(type,start,20)
+	return HttpResponse(newsList)
+
 def getMeetNewsList(request,start,type):   #必须默认带request参数,否者无法访问\
 	# _num=request.GET.get('num')
 	print(type)

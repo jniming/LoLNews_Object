@@ -13,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/News_Spider$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1478056323640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/News_Spider$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1478695576817" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/spider2$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1476697483287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -25,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="news_spider.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="news_spider.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spider/news_spider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="60" column="15" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="15" />
+            <state relative-caret-position="365">
+              <caret line="181" column="35" selection-start-line="181" selection-start-column="35" selection-end-line="181" selection-end-column="35" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
               </folding>
@@ -40,8 +40,8 @@
       <file leaf-file-name="element.py" pinned="false" current-in-tab="false">
         <entry file="file://D:/python3.5/Lib/site-packages/bs4/element.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30875">
-              <caret line="1240" column="0" selection-start-line="1240" selection-start-column="0" selection-end-line="1240" selection-end-column="0" />
+            <state relative-caret-position="25">
+              <caret line="957" column="0" selection-start-line="957" selection-start-column="0" selection-end-line="957" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -60,47 +60,36 @@
       <file leaf-file-name="client.py" pinned="false" current-in-tab="false">
         <entry file="file://D:/python3.5/Lib/http/client.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10000">
+            <state relative-caret-position="25">
               <caret line="408" column="0" selection-start-line="408" selection-start-column="0" selection-end-line="408" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="request.py" pinned="false" current-in-tab="false">
-        <entry file="file://D:/python3.5/Lib/urllib/request.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6375">
-              <caret line="280" column="0" selection-start-line="280" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sql_operator.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="sql_operator.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/util/sql_operator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="700">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="281">
+              <caret line="192" column="0" selection-start-line="192" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
               <folding>
                 <element signature="e#24#38#0" expanded="true" />
-                <marker date="1478001176446" expanded="true" signature="957:1171" ph="create table... if" />
-                <marker date="1478001176446" expanded="true" signature="1266:1412" ph="create table... if" />
-                <marker date="1478001176446" expanded="true" signature="1517:1701" ph="create table... if" />
-                <marker date="1478001176446" expanded="true" signature="1810:2026" ph="create table... if" />
-                <marker date="1478001176446" expanded="true" signature="2156:2385" ph="create table... if" />
-                <marker date="1478001176446" expanded="true" signature="2696:2768" ph="insert into missing_value... " />
-                <marker date="1478001176446" expanded="true" signature="3493:3528" ph="select * fro... missing_value" />
-                <marker date="1478001176446" expanded="true" signature="3493:3531" ph="select * fro... missing_value" />
-                <marker date="1478001176446" expanded="true" signature="3493:3532" ph="select * fro... missing_value" />
-                <marker date="1478001176446" expanded="true" signature="3749:3790" ph="insert into missing_value... " />
-                <marker date="1478001176446" expanded="true" signature="3936:3948" ph="DELETE FROM " />
-                <marker date="1478001176446" expanded="true" signature="3936:3950" ph="DELETE FROM " />
-                <marker date="1478001176446" expanded="true" signature="4101:4153" ph="insert into " />
-                <marker date="1478001176446" expanded="true" signature="4418:4486" ph="insert into " />
-                <marker date="1478001176446" expanded="true" signature="4706:4742" ph="select * fro... missing_value" />
-                <marker date="1478001176446" expanded="true" signature="4964:4976" ph="DELETE FROM " />
-                <marker date="1478001176446" expanded="true" signature="4964:4978" ph="DELETE FROM " />
+                <marker date="1478695572936" expanded="true" signature="957:1171" ph="create table... if" />
+                <marker date="1478695572936" expanded="true" signature="1266:1412" ph="create table... if" />
+                <marker date="1478695572936" expanded="true" signature="1517:1701" ph="create table... if" />
+                <marker date="1478695572936" expanded="true" signature="1810:2026" ph="create table... if" />
+                <marker date="1478695572936" expanded="true" signature="2156:2385" ph="create table... if" />
+                <marker date="1478695572936" expanded="true" signature="2485:2780" ph="create table... if" />
+                <marker date="1478695572936" expanded="true" signature="3091:3163" ph="insert into missing_value... " />
+                <marker date="1478695572936" expanded="true" signature="3403:3500" ph="insert into missing_value... " />
+                <marker date="1478695572936" expanded="true" signature="4671:4710" ph="select * fro... missing_value" />
+                <marker date="1478695572936" expanded="true" signature="5010:5051" ph="select * fro... missing_value" />
+                <marker date="1478695572936" expanded="true" signature="5261:5302" ph="insert into missing_value... " />
+                <marker date="1478695572936" expanded="true" signature="5448:5460" ph="DELETE FROM " />
+                <marker date="1478695572936" expanded="true" signature="5613:5665" ph="insert into missing_value... " />
+                <marker date="1478695572936" expanded="true" signature="5930:5998" ph="insert into missing_value... " />
+                <marker date="1478695572936" expanded="true" signature="6218:6254" ph="select * fro... missing_value" />
+                <marker date="1478695572936" expanded="true" signature="6463:6475" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
@@ -109,9 +98,21 @@
       <file leaf-file-name="grap_uri.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/grap_uri.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="12" column="70" selection-start-line="12" selection-start-column="70" selection-end-line="12" selection-end-column="70" />
+            <state relative-caret-position="375">
+              <caret line="15" column="10" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="10" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="video_spider.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spider/video_spider.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="975">
+              <caret line="41" column="48" selection-start-line="41" selection-start-column="48" selection-end-line="41" selection-end-column="48" />
+              <folding>
+                <element signature="e#24#37#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -119,8 +120,8 @@
       <file leaf-file-name="table_name.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/table_name.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="75">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -129,8 +130,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+            <state relative-caret-position="220">
+              <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -141,8 +142,8 @@
       <file leaf-file-name="user_chome.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/user_chome.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+            <state relative-caret-position="275">
+              <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -165,11 +166,12 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/index.py" />
         <option value="$PROJECT_DIR$/util/table.py" />
-        <option value="$PROJECT_DIR$/util/table_name.py" />
         <option value="$PROJECT_DIR$/util/grap_uri.py" />
-        <option value="$PROJECT_DIR$/util/sql_operator.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/util/table_name.py" />
+        <option value="$PROJECT_DIR$/spider/video_spider.py" />
         <option value="$PROJECT_DIR$/spider/news_spider.py" />
+        <option value="$PROJECT_DIR$/util/sql_operator.py" />
       </list>
     </option>
   </component>
@@ -287,7 +289,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../News_Server" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
@@ -553,27 +555,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18550107" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18976545" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44372293" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40151516" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6103896" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4383117" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46320346" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4383117" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -602,7 +604,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/spider/news_spider.py</url>
-          <line>83</line>
+          <line>77</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -621,14 +623,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/util/user_chome.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_gl.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -668,23 +662,22 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#24#38#0" expanded="true" />
-            <marker date="1478001176446" expanded="true" signature="957:1171" ph="create table... if" />
-            <marker date="1478001176446" expanded="true" signature="1266:1412" ph="create table... if" />
-            <marker date="1478001176446" expanded="true" signature="1517:1701" ph="create table... if" />
-            <marker date="1478001176446" expanded="true" signature="1810:2026" ph="create table... if" />
-            <marker date="1478001176446" expanded="true" signature="2156:2385" ph="create table... if" />
-            <marker date="1478001176446" expanded="true" signature="2696:2768" ph="insert into missing_value... " />
-            <marker date="1478001176446" expanded="true" signature="3493:3528" ph="select * fro... missing_value" />
-            <marker date="1478001176446" expanded="true" signature="3493:3531" ph="select * fro... missing_value" />
-            <marker date="1478001176446" expanded="true" signature="3493:3532" ph="select * fro... missing_value" />
-            <marker date="1478001176446" expanded="true" signature="3749:3790" ph="insert into missing_value... " />
-            <marker date="1478001176446" expanded="true" signature="3936:3948" ph="DELETE FROM " />
-            <marker date="1478001176446" expanded="true" signature="3936:3950" ph="DELETE FROM " />
-            <marker date="1478001176446" expanded="true" signature="4101:4153" ph="insert into " />
-            <marker date="1478001176446" expanded="true" signature="4418:4486" ph="insert into " />
-            <marker date="1478001176446" expanded="true" signature="4706:4742" ph="select * fro... missing_value" />
-            <marker date="1478001176446" expanded="true" signature="4964:4976" ph="DELETE FROM " />
-            <marker date="1478001176446" expanded="true" signature="4964:4978" ph="DELETE FROM " />
+            <marker date="1478695572936" expanded="true" signature="957:1171" ph="create table... if" />
+            <marker date="1478695572936" expanded="true" signature="1266:1412" ph="create table... if" />
+            <marker date="1478695572936" expanded="true" signature="1517:1701" ph="create table... if" />
+            <marker date="1478695572936" expanded="true" signature="1810:2026" ph="create table... if" />
+            <marker date="1478695572936" expanded="true" signature="2156:2385" ph="create table... if" />
+            <marker date="1478695572936" expanded="true" signature="2485:2780" ph="create table... if" />
+            <marker date="1478695572936" expanded="true" signature="3091:3163" ph="insert into missing_value... " />
+            <marker date="1478695572936" expanded="true" signature="3403:3500" ph="insert into missing_value... " />
+            <marker date="1478695572936" expanded="true" signature="4671:4710" ph="select * fro... missing_value" />
+            <marker date="1478695572936" expanded="true" signature="5010:5051" ph="select * fro... missing_value" />
+            <marker date="1478695572936" expanded="true" signature="5261:5302" ph="insert into missing_value... " />
+            <marker date="1478695572936" expanded="true" signature="5448:5460" ph="DELETE FROM " />
+            <marker date="1478695572936" expanded="true" signature="5613:5665" ph="insert into missing_value... " />
+            <marker date="1478695572936" expanded="true" signature="5930:5998" ph="insert into missing_value... " />
+            <marker date="1478695572936" expanded="true" signature="6218:6254" ph="select * fro... missing_value" />
+            <marker date="1478695572936" expanded="true" signature="6463:6475" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -755,23 +748,22 @@
           <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding>
             <element signature="e#24#38#0" expanded="true" />
-            <marker date="1478001176446" expanded="true" signature="957:1171" ph="create table... if" />
-            <marker date="1478001176446" expanded="true" signature="1266:1412" ph="create table... if" />
-            <marker date="1478001176446" expanded="true" signature="1517:1701" ph="create table... if" />
-            <marker date="1478001176446" expanded="true" signature="1810:2026" ph="create table... if" />
-            <marker date="1478001176446" expanded="true" signature="2156:2385" ph="create table... if" />
-            <marker date="1478001176446" expanded="true" signature="2696:2768" ph="insert into missing_value... " />
-            <marker date="1478001176446" expanded="true" signature="3493:3528" ph="select * fro... missing_value" />
-            <marker date="1478001176446" expanded="true" signature="3493:3531" ph="select * fro... missing_value" />
-            <marker date="1478001176446" expanded="true" signature="3493:3532" ph="select * fro... missing_value" />
-            <marker date="1478001176446" expanded="true" signature="3749:3790" ph="insert into missing_value... " />
-            <marker date="1478001176446" expanded="true" signature="3936:3948" ph="DELETE FROM " />
-            <marker date="1478001176446" expanded="true" signature="3936:3950" ph="DELETE FROM " />
-            <marker date="1478001176446" expanded="true" signature="4101:4153" ph="insert into " />
-            <marker date="1478001176446" expanded="true" signature="4418:4486" ph="insert into " />
-            <marker date="1478001176446" expanded="true" signature="4706:4742" ph="select * fro... missing_value" />
-            <marker date="1478001176446" expanded="true" signature="4964:4976" ph="DELETE FROM " />
-            <marker date="1478001176446" expanded="true" signature="4964:4978" ph="DELETE FROM " />
+            <marker date="1478695572936" expanded="true" signature="957:1171" ph="create table... if" />
+            <marker date="1478695572936" expanded="true" signature="1266:1412" ph="create table... if" />
+            <marker date="1478695572936" expanded="true" signature="1517:1701" ph="create table... if" />
+            <marker date="1478695572936" expanded="true" signature="1810:2026" ph="create table... if" />
+            <marker date="1478695572936" expanded="true" signature="2156:2385" ph="create table... if" />
+            <marker date="1478695572936" expanded="true" signature="2485:2780" ph="create table... if" />
+            <marker date="1478695572936" expanded="true" signature="3091:3163" ph="insert into missing_value... " />
+            <marker date="1478695572936" expanded="true" signature="3403:3500" ph="insert into missing_value... " />
+            <marker date="1478695572936" expanded="true" signature="4671:4710" ph="select * fro... missing_value" />
+            <marker date="1478695572936" expanded="true" signature="5010:5051" ph="select * fro... missing_value" />
+            <marker date="1478695572936" expanded="true" signature="5261:5302" ph="insert into missing_value... " />
+            <marker date="1478695572936" expanded="true" signature="5448:5460" ph="DELETE FROM " />
+            <marker date="1478695572936" expanded="true" signature="5613:5665" ph="insert into missing_value... " />
+            <marker date="1478695572936" expanded="true" signature="5930:5998" ph="insert into missing_value... " />
+            <marker date="1478695572936" expanded="true" signature="6218:6254" ph="select * fro... missing_value" />
+            <marker date="1478695572936" expanded="true" signature="6463:6475" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -826,13 +818,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.py" />
     <entry file="file://$USER_HOME$/.PyCharm2016.2/system/python_stubs/1570687434/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -874,7 +859,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -885,34 +869,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/table_name.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util/grap_uri.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="70" selection-start-line="12" selection-start-column="70" selection-end-line="12" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/python3.5/Lib/urllib/request.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6375">
           <caret line="280" column="0" selection-start-line="280" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/python3.5/Lib/http/client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10000">
-          <caret line="408" column="0" selection-start-line="408" selection-start-column="0" selection-end-line="408" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -925,65 +885,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/python3.5/Lib/site-packages/bs4/element.py">
+    <entry file="file://$PROJECT_DIR$/app.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30875">
-          <caret line="1240" column="0" selection-start-line="1240" selection-start-column="0" selection-end-line="1240" selection-end-column="0" />
+        <state relative-caret-position="225">
+          <caret line="9" column="63" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/sql_operator.py">
+    <entry file="file://D:/python3.5/Lib/site-packages/bs4/element.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="25">
+          <caret line="957" column="0" selection-start-line="957" selection-start-column="0" selection-end-line="957" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python3.5/Lib/http/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="408" column="0" selection-start-line="408" selection-start-column="0" selection-end-line="408" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/video_spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="41" column="48" selection-start-line="41" selection-start-column="48" selection-end-line="41" selection-end-column="48" />
           <folding>
-            <element signature="e#24#38#0" expanded="true" />
-            <marker date="1478001176446" expanded="true" signature="957:1171" ph="create table... if" />
-            <marker date="1478001176446" expanded="true" signature="1266:1412" ph="create table... if" />
-            <marker date="1478001176446" expanded="true" signature="1517:1701" ph="create table... if" />
-            <marker date="1478001176446" expanded="true" signature="1810:2026" ph="create table... if" />
-            <marker date="1478001176446" expanded="true" signature="2156:2385" ph="create table... if" />
-            <marker date="1478001176446" expanded="true" signature="2696:2768" ph="insert into missing_value... " />
-            <marker date="1478001176446" expanded="true" signature="3493:3528" ph="select * fro... missing_value" />
-            <marker date="1478001176446" expanded="true" signature="3493:3531" ph="select * fro... missing_value" />
-            <marker date="1478001176446" expanded="true" signature="3493:3532" ph="select * fro... missing_value" />
-            <marker date="1478001176446" expanded="true" signature="3749:3790" ph="insert into missing_value... " />
-            <marker date="1478001176446" expanded="true" signature="3936:3948" ph="DELETE FROM " />
-            <marker date="1478001176446" expanded="true" signature="3936:3950" ph="DELETE FROM " />
-            <marker date="1478001176446" expanded="true" signature="4101:4153" ph="insert into " />
-            <marker date="1478001176446" expanded="true" signature="4418:4486" ph="insert into " />
-            <marker date="1478001176446" expanded="true" signature="4706:4742" ph="select * fro... missing_value" />
-            <marker date="1478001176446" expanded="true" signature="4964:4976" ph="DELETE FROM " />
-            <marker date="1478001176446" expanded="true" signature="4964:4978" ph="DELETE FROM " />
+            <element signature="e#24#37#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/grap_uri.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" column="10" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/table_name.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/user_chome.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+        <state relative-caret-position="220">
+          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/user_chome.py">
+    <entry file="file://$PROJECT_DIR$/spider/news_spider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
-          <folding />
+        <state relative-caret-position="365">
+          <caret line="181" column="35" selection-start-line="181" selection-start-column="35" selection-end-line="181" selection-end-column="35" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spider/news_spider.py">
+    <entry file="file://$PROJECT_DIR$/util/sql_operator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="60" column="15" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="15" />
+        <state relative-caret-position="281">
+          <caret line="192" column="0" selection-start-line="192" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
           <folding>
-            <element signature="e#24#37#0" expanded="true" />
+            <element signature="e#24#38#0" expanded="true" />
+            <marker date="1478695572936" expanded="true" signature="957:1171" ph="create table... if" />
+            <marker date="1478695572936" expanded="true" signature="1266:1412" ph="create table... if" />
+            <marker date="1478695572936" expanded="true" signature="1517:1701" ph="create table... if" />
+            <marker date="1478695572936" expanded="true" signature="1810:2026" ph="create table... if" />
+            <marker date="1478695572936" expanded="true" signature="2156:2385" ph="create table... if" />
+            <marker date="1478695572936" expanded="true" signature="2485:2780" ph="create table... if" />
+            <marker date="1478695572936" expanded="true" signature="3091:3163" ph="insert into missing_value... " />
+            <marker date="1478695572936" expanded="true" signature="3403:3500" ph="insert into missing_value... " />
+            <marker date="1478695572936" expanded="true" signature="4671:4710" ph="select * fro... missing_value" />
+            <marker date="1478695572936" expanded="true" signature="5010:5051" ph="select * fro... missing_value" />
+            <marker date="1478695572936" expanded="true" signature="5261:5302" ph="insert into missing_value... " />
+            <marker date="1478695572936" expanded="true" signature="5448:5460" ph="DELETE FROM " />
+            <marker date="1478695572936" expanded="true" signature="5613:5665" ph="insert into missing_value... " />
+            <marker date="1478695572936" expanded="true" signature="5930:5998" ph="insert into missing_value... " />
+            <marker date="1478695572936" expanded="true" signature="6218:6254" ph="select * fro... missing_value" />
+            <marker date="1478695572936" expanded="true" signature="6463:6475" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>

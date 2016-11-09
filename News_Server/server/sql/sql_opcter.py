@@ -41,6 +41,23 @@ class SqlOpcter(object):
 		cur_.close()
 		return json_list
 
+	def get_video_list(self,type,start,end):
+		table=self._get_video_type_table(type)
+		print(table)
+		cur_ = self.db.cursor()
+		sql = "select * from %s order BY  v_time DESC limit  %s,%s " % (table,start,end)
+		cur_.execute(sql)
+		_list = cur_.fetchall()
+		print(_list)
+		_news_ = []
+		for n in _list:
+			_stu = self.get_video_dir(n)
+			_news_.append(_stu)
+		json_list = json.dumps(_news_)  # 键值对转为json
+		print(json_list)
+		cur_.close()
+		return json_list
+
 	def get_meet_news_list(self,type,start,end):
 		table=self._get_meet_news_type_table(type)
 		print(table)
@@ -79,6 +96,18 @@ class SqlOpcter(object):
 			return table_name.meet_table[1]
 		return None
 
+	def _get_video_type_table(self,type):
+		ty=int(type)
+		if ty==0:   #最新视频
+			return table_name.video_table[0]
+		if ty==1:  #主播视频
+			return table_name.video_table[1]
+		if ty==2:  #娱乐视频
+			return table_name.video_table[2]
+		if ty==3:  #比赛视频
+			return table_name.video_table[3]
+		return None
+
 
 	def query_news_info(self, nid,type):
 		table=self._get_news_type_table(type)
@@ -97,6 +126,16 @@ class SqlOpcter(object):
 		news_dir['mNewsTime'] = news[2].strftime("%Y-%m-%d")
 		news_dir['mNewsId'] = news[0]
 		print(news[2].strftime("%Y-%m-%d"))
+		return news_dir
+
+	def get_video_dir(self, news):
+		news_dir = dict()
+		news_dir['v_id'] = news[0]
+		news_dir['v_title'] = news[1]
+		news_dir['v_time'] = news[2].strftime("%Y-%m-%d")
+		news_dir['v_img_url'] = news[3]
+		news_dir['v_content_url'] = news[4]
+		news_dir['v_author'] = news[5]
 		return news_dir
 	def get_Man_Data(self):  # 获取周免数据
 		cur_ = self.db.cursor()

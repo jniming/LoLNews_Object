@@ -57,9 +57,9 @@ class SpiderHtml(object):
 		body_html = "<body style='max-width:100%;height:auto;'>" + str(title) + str(msg_info) + "</body>"
 		ass_style = "<style>img{max-width:100%;height:auto;}</style>"
 		html = "<html><head>" + ass_style + "</head>" + body_html + "</html>"
-		print(html)
+		# print(html)
 		html=html.replace(str(div_body[1]),"",1)
-		print(html)
+		# print(html)
 
 		# _index=html.index(str(div_body[1]))
 		# retain_html=html[:_index]

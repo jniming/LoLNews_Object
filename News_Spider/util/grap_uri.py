@@ -12,3 +12,5 @@ sysNews_url='http://lol.qq.com/webplat/info/news_version3/152/4579/4581/m5583/li
 inter_meet_url='http://lol.17173.com/list/edu/index.shtml'   # 综合攻略
 system_meet_url='http://lol.17173.com/list/fanyi/index.shtml'   # 版本攻略
 
+#视频地址
+video_link=['http://v.17173.com/lol/2016/new/new.shtml','http://v.17173.com/lol/2016/new/jieshuo.shtml' ,'http://v.17173.com/lol/2016/new/remen.shtml','http://v.17173.com/lol/2016/new/saishi.shtml']

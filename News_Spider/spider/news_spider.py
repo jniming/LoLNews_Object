@@ -44,7 +44,6 @@ class NewsSpider(object):
 					news_uri = title_h['href']
 					news_title = title_h.string  # .string 获取标签内的内容
 					uri_inde=str(news_uri).find('lol.17173.com')
-					print("地址格式是否符合-->"+str(uri_inde))
 					if uri_inde is -1:
 						return None
 
@@ -52,12 +51,8 @@ class NewsSpider(object):
 					item['title'] = news_title
 				# 下面进行数据实体化
 				if _gl.sql_oper.is_news_exist(news_type, item['url']) is False:
-					print("数据不存在")
 					_gl.sql_oper.insert_news_in_table(news_type, item)
-				else:
-					print("数据存在")
-					_continue = False
-					break
+
 		except:
 			return None
 
@@ -80,11 +75,9 @@ class NewsSpider(object):
 
 		news_url = get_uri(news_type);
 		while True:
-			print('本页--' + news_url)
 			should_counin = self.parse_data(news_url, news_type)
 
 			news_url = self._get_next_page_url(news_url)
-			print('下一页--' + news_url)
 			if should_counin is None:
 				return None
 			else:
@@ -95,39 +88,28 @@ class NewsSpider(object):
 	def _get_next_page_url(self,url):
 		#http://lol.17173.com/banben/list/index_1.shtml
 		fromt_url=str(url)
-		print(fromt_url)
 		_url_=None
 		url_start_str=''
 		url_array=fromt_url.split('/')
-		print(url_array)
 		end_str=url_array[len(url_array)-1]
-		print(end_str)
 		nPos=end_str.find("_")
-		# print(len(end_str and 'z'))
-		print(nPos)
 		for ay in url_array:
-			print(ay.find(end_str))
 			if ay.find(end_str) ==-1:
 				url_start_str = url_start_str + ay + '/'
 
 
 
-		print(url_start_str)
 		if nPos < 0:   #不包含,说明为首页
 			end_str_array=end_str.split('.')
 			step_str=end_str_array[0]  #标志字符串
 			_url_=url_start_str+step_str+"_1."+end_str_array[1]
-			print(_url_)
 		else:   #包含,说明不是第一页
 			end_str_array = end_str.split('.')
 			step_str_array = end_str_array[0].split('_')
-			print(step_str_array)
 			index_str=step_str_array[1]
-			print(index_str)
 			index_int=int(str(index_str))
 			next_page_int=index_int+1;
 			_url_=url_start_str+step_str_array[0]+'_'+str(next_page_int)+"."+end_str_array[1]
-			print(_url_)
 		return _url_
 
 
@@ -137,7 +119,6 @@ class NewsSpider(object):
 	def getTime(self, date):
 		ye = time.strftime('%Y')
 		format_time = str(ye) + '-' + str(date)
-		print(format_time)
 		return format_time
 
 	def getManHtml(self):  # 获取周免英雄
@@ -147,13 +128,11 @@ class NewsSpider(object):
 			return None
 		soup = bs4.BeautifulSoup(content, "html.parser")
 		hero_group = soup.findAll('div', class_='hero-group')
-		# print(hero_group)
 		_gl.sql_oper.dete_man_table()
 		li = hero_group[len(hero_group) - 1].findAll('li')
 		for man in li:
 			img_html = man.find('img')
 			man_url_html = img_html['src']
-
 			_gl.sql_oper.insert_man_img(str(man_url_html))
 
 	def getInnerHtml(self):  # 获取广告资源
@@ -192,17 +171,12 @@ class NewsSpider(object):
 		item = dict()
 		for li in _li_html:
 			a_html = li.find('a',target="_blank")
-			print(a_html)
 			sys_news_title=a_html.string
 			# sy=sys_news_title.decode('gb2312')
-			# print(sy)
 			sys_time_html = li.find('span', class_="date")
 			sys_time = sys_time_html.string
-			print(sys_time)
 			sys_link = a_html['href']
-			print(sys_link)
 			item['mSysTime'] = str(sys_time)
 			item['mSysLink'] = str(sys_link)
 			item['mSysTitle'] = str(sys_news_title)
-			print(item)
 			_gl.sql_oper.insert_SysNews_url(item)

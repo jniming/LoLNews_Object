@@ -36,32 +36,32 @@ class SqlOperator(object):
 		for table in new_table_list:
 			sql = """create table if not exists %s(
             mNewsId int auto_increment,
-            mNewsTitle varchar(255),
+            mNewsTitle varchar(128),
             mNewsTime TIMESTAMP ,
-            mNewsImgUri varchar(255),
+            mNewsImgUri varchar(128),
             primary key (mNewsId))""" % (table)
 			cursor.execute(sql)
 
 		table_man=table_name.main_table[0]   #周免英雄表
 		sql = """create table if not exists %s(
 		            mManId int auto_increment,
-		            mManImgUrl varchar(255),
+		            mManImgUrl varchar(128),
 		            primary key (mManId))""" % (table_man)
 		cursor.execute(sql)
 
 		inner_table=table_name.main_table[1]   # 广告轮播表
 		inner_sql="""create table if not exists %s(
 		            mInnerId int auto_increment,
-		            mImgUrl varchar(255),
-		            mLinkUrl varchar(255),
+		            mImgUrl varchar(128),
+		            mLinkUrl varchar(128),
 		            primary key (mInnerId))""" % (inner_table)
 		cursor.execute(inner_sql)
 
 		sys_table= table_name.main_table[2]   # 系统公告
 		sys_sql="""create table if not exists %s(
 		            mSysId int auto_increment,
-		            mSysTitle varchar(255),
-		            mSysLink varchar(255),
+		            mSysTitle varchar(128),
+		            mSysLink varchar(128),
 		            mSysTime TIMESTAMP,
 		            primary key (mSysId))""" % (sys_table)
 		cursor.execute(sys_sql)
@@ -69,10 +69,22 @@ class SqlOperator(object):
 		for _table in  meet_table_list:
 			sql = """create table if not exists %s(
 			            mNewsId int auto_increment,
-			            mNewsTitle varchar(255),
+			            mNewsTitle varchar(128),
 			            mNewsTime TIMESTAMP ,
-			            mNewsImgUri varchar(255),
+			            mNewsImgUri varchar(128),
 			            primary key (mNewsId))""" % (_table)
+			cursor.execute(sql)
+
+
+		for _table in  table_name.video_table:   #视频表
+			sql = """create table if not exists %s(
+			            v_id int auto_increment,
+			            v_title varchar(128),
+			            v_time TIMESTAMP ,
+			            v_img_url varchar(128),
+			            v_content_url varchar(128),
+			            v_author varchar(50),
+			            primary key (v_id))""" % (_table)
 			cursor.execute(sql)
 
 		cursor.close()
@@ -83,7 +95,14 @@ class SqlOperator(object):
 		_str = pymysql.escape_string(item['title'])  # 格式化改字符串,
 		_url = pymysql.escape_string(item['url'])  # 格式化改字符串,
 		sql = "insert into %s(mNewsTitle,mNewsImgUri,mNewsTime) values ('%s','%s','%s')" % (table, _str, _url,str(item['time']) )
-		print(sql)
+		_cur.execute(sql)
+		self.db.commit()
+		_cur.close()
+
+	def insert_video_in_table(self, news_type, item):  # 视频表信息插入
+		table = self._get_video_by_type(news_type)
+		_cur = self.db.cursor()
+		sql = "insert into %s(v_title,v_time,v_img_url,v_content_url,v_author) values ('%s','%s','%s','%s','%s')" % (table, item['v_title'], item['v_time'],item['v_img_url'],item['v_content_url'],item['v_author'])
 		_cur.execute(sql)
 		self.db.commit()
 		_cur.close()
@@ -101,17 +120,43 @@ class SqlOperator(object):
 		if news_type == table_name.meet_table[1]:
 			table = table_name.meet_table[1]
 		return table
+	def _get_video_by_type(self, news_type):
+		table = None
+		if news_type == table_name.video_table[0]:
+			table = table_name.video_table[0]
+		if news_type == table_name.video_table[1]:
+			table = table_name.video_table[1]
+		if news_type == table_name.video_table[2]:
+			table = table_name.video_table[2]
+		if news_type == table_name.video_table[3]:
+			table = table_name.video_table[3]
+		return table
 
 	def is_news_exist(self, news_type, url):
 		table = self._get_news_by_type(news_type)
 		_url = pymysql.escape_string(url)  # 格式化改字符串
 		sql = "select * from %s where mNewsImgUri='%s' " % (table, _url)
-		print(sql)
 		cur = self.db.cursor()
 		cur.execute(sql)
 		_is_ex_news = cur.fetchone()  # 判断数据是否存在
 		cur.close()
 		return _is_ex_news is not None
+
+	def is_video_exist(self, video_type, url):
+		table = self._get_video_by_type(video_type)
+		_url = pymysql.escape_string(url)  # 格式化改字符串
+		sql = "select * from %s where v_content_url='%s' " % (table, _url)
+		cur = self.db.cursor()
+		cur.execute(sql)
+		_is_ex_news = cur.fetchone()  # 判断数据是否存在
+		cur.close()
+		return _is_ex_news is not None
+
+
+
+
+
+
 	def insert_man_img(self,url):   # 免费英雄数据
 		sql = "insert into %s (mManImgUrl) values ('%s')" % (table_name.main_table[0],url)
 		cur = self.db.cursor()
@@ -145,7 +190,6 @@ class SqlOperator(object):
 
 	def _query_sysNews_isexit(self,url):
 		sql = "select * from %s where mSysLink='%s' " % (table_name.main_table[2], url)
-		print(sql)
 		cur = self.db.cursor()
 		cur.execute(sql)
 		_is_ex_news = cur.fetchone()  # 判断数据是否存在
